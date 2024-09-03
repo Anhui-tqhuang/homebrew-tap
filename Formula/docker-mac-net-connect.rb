@@ -9,7 +9,9 @@ class DockerMacNetConnect < Formula
   sha256 "9fc765de8168f52bd50b1ca0e70629f88032c63140fe54350eff5822d323f072"
   license "MIT"
 
-  depends_on "go" => :build
+  depends_on "go@1.22" => :build
+
+  patch :p1, :DATA
 
   def install
     if ENV["HOMEBREW_GOPROXY"]
